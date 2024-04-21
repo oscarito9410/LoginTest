@@ -9,4 +9,5 @@
     <string name="error_service_auth">Error al iniciar sesión \n Por favor revisa tus credenciales.</string>
     <string name="error_unhandled">Ha ocurrido un error desconocido</string>
     <string name="error_no_internet_connection">Sin conexión a internet</string>
+    <string name="message_welcome_user">Hola, %1$s! Has ingresado correctamente 👍.</string>
 </resources>

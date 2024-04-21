@@ -1,5 +1,11 @@
 package com.aboolean.logintest
 
+import com.aboolean.logintest.MockData.INVALID_CREDENTIALS_ERROR
+import com.aboolean.logintest.MockData.INVALID_EMAIL
+import com.aboolean.logintest.MockData.INVALID_PASSWORD
+import com.aboolean.logintest.MockData.UNHANDLED_ERROR_MESSAGE
+import com.aboolean.logintest.MockData.VALID_EMAIL
+import com.aboolean.logintest.MockData.VALID_PASSWORD
 import com.aboolean.logintest.data.exception.InvalidCredentialException
 import com.aboolean.logintest.domain.entities.UserEntity
 import com.aboolean.logintest.domain.usecase.DoLoginUseCase
@@ -32,7 +38,10 @@ import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
-@OptIn(ExperimentalResourceApi::class, ExperimentalCoroutinesApi::class)
+@OptIn(
+    ExperimentalResourceApi::class,
+    ExperimentalCoroutinesApi::class
+)
 class LoginViewModelTest {
 
     private val useCase: DoLoginUseCase = mockk(relaxed = true)
@@ -227,16 +236,4 @@ class LoginViewModelTest {
                 assertFalse(state.isLoading)
             }
         }
-
-    companion object {
-        // test  data
-        const val VALID_EMAIL = "test@example.com"
-        const val INVALID_EMAIL = "invalid email"
-        const val VALID_PASSWORD = "password1234$"
-        const val INVALID_PASSWORD = "pass"
-
-        // error messages
-        const val INVALID_CREDENTIALS_ERROR = "Las credenciales ingresadas son incorrectas"
-        const val UNHANDLED_ERROR_MESSAGE = "Ha ocurrido un error desconocido"
-    }
 }

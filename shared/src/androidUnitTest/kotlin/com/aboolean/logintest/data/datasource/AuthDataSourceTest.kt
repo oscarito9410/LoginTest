@@ -1,11 +1,11 @@
 package com.aboolean.logintest.data.datasource
 
-import com.aboolean.logintest.MockData.INVALID_EMAIL
-import com.aboolean.logintest.MockData.INVALID_PASSWORD
-import com.aboolean.logintest.MockData.VALID_ACCESS_TOKEN
-import com.aboolean.logintest.MockData.VALID_EMAIL
-import com.aboolean.logintest.MockData.VALID_PASSWORD
-import com.aboolean.logintest.MockData.VALID_USER_NAME
+import com.aboolean.logintest.SharedMockData.INVALID_EMAIL
+import com.aboolean.logintest.SharedMockData.INVALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.VALID_ACCESS_TOKEN
+import com.aboolean.logintest.SharedMockData.VALID_EMAIL
+import com.aboolean.logintest.SharedMockData.VALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.VALID_USER_NAME
 import com.aboolean.logintest.data.exception.InvalidCredentialException
 import com.aboolean.logintest.data.model.AuthRequest
 import com.aboolean.logintest.foundation.OperationResult
@@ -72,5 +72,4 @@ class AuthDataSourceTest {
         assertTrue(result is OperationResult.Error)
         assertTrue(result.exception is InvalidCredentialException)
     }
-
 }

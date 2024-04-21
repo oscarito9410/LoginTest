@@ -10,7 +10,7 @@ import kotlin.test.assertTrue
 class OperationResultTest {
 
     @Test
-    fun `mapToDomain maps success correctly`() {
+    fun mapToDomain_maps_success_correctly() {
         // given
         val original = OperationResult.Success(5)
         val expected = OperationResult.Success(10)
@@ -25,7 +25,7 @@ class OperationResultTest {
     }
 
     @Test
-    fun `mapToDomain preserves error`() {
+    fun mapToDomain_preserves_error() {
         // given
         val originalError = InvalidCredentialException()
         val original = OperationResult.Error(originalError)

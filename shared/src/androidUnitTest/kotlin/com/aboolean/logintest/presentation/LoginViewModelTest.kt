@@ -1,11 +1,11 @@
 package com.aboolean.logintest.presentation
 
-import com.aboolean.logintest.MockData.INVALID_CREDENTIALS_ERROR
-import com.aboolean.logintest.MockData.INVALID_EMAIL
-import com.aboolean.logintest.MockData.INVALID_PASSWORD
-import com.aboolean.logintest.MockData.UNHANDLED_ERROR_MESSAGE
-import com.aboolean.logintest.MockData.VALID_EMAIL
-import com.aboolean.logintest.MockData.VALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.INVALID_CREDENTIALS_ERROR
+import com.aboolean.logintest.SharedMockData.INVALID_EMAIL
+import com.aboolean.logintest.SharedMockData.INVALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.UNHANDLED_ERROR_MESSAGE
+import com.aboolean.logintest.SharedMockData.VALID_EMAIL
+import com.aboolean.logintest.SharedMockData.VALID_PASSWORD
 import com.aboolean.logintest.data.exception.InvalidCredentialException
 import com.aboolean.logintest.domain.entities.UserEntity
 import com.aboolean.logintest.domain.usecase.DoLoginUseCase

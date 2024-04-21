@@ -28,6 +28,7 @@ import androidx.compose.ui.window.DialogProperties
 fun InfoAlertDialog(
     text: String,
     type: AlertType,
+    modifier: Modifier,
     onCancel: (() -> Unit)? = null,
     onConfirm: () -> Unit = {}
 ) {
@@ -39,7 +40,7 @@ fun InfoAlertDialog(
     }
 
     AlertDialog(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier,
         onDismissRequest = onCancel ?: onConfirm,
         text = {
             Column(

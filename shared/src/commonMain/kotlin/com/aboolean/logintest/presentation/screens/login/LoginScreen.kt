@@ -18,16 +18,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.aboolean.logintest.presentation.components.CustomTextField
 import com.aboolean.logintest.presentation.components.FullScreenLoader
 import com.aboolean.logintest.presentation.components.PasswordTextField
 import com.aboolean.logintest.presentation.components.alertdialog.AlertType
 import com.aboolean.logintest.presentation.components.alertdialog.InfoAlertDialog
+import com.aboolean.logintest.presentation.screens.login.TestTags.EMAIL_TEXT_FIELD
+import com.aboolean.logintest.presentation.screens.login.TestTags.LOGIN_BUTTON
+import com.aboolean.logintest.presentation.screens.login.TestTags.PASSWORD_TEXT_FIELD
 import com.aboolean.logintest.presentation.theme.AppTheme
 import com.aboolean.logintest.presentation.theme.Dimens.ImageLoginSize
 import com.aboolean.logintest.presentation.theme.Dimens.LargeSpace
@@ -108,7 +111,7 @@ fun LoginScreenContent(
                     .padding(
                         horizontal = TextFieldHorizontalPadding,
                         vertical = TextFieldPadding
-                    ),
+                    ).testTag(EMAIL_TEXT_FIELD),
                 isInvalid = state.isInvalidEmail,
                 keyboardOptions = KeyboardOptions(
                     imeAction = ImeAction.Next,
@@ -129,7 +132,7 @@ fun LoginScreenContent(
                     .padding(
                         horizontal = TextFieldHorizontalPadding,
                         vertical = TextFieldPadding
-                    ),
+                    ).testTag(PASSWORD_TEXT_FIELD),
                 isInvalid = state.isInvalidPassword,
                 errorMessage = stringResource(Res.string.error_invalid_password)
             )
@@ -141,7 +144,7 @@ fun LoginScreenContent(
                 enabled = isLoginActionEnabled,
                 modifier = Modifier.fillMaxWidth().padding(
                     horizontal = TextFieldHorizontalPadding
-                )
+                ).testTag(LOGIN_BUTTON)
             ) {
                 Text(text = stringResource(Res.string.text_login))
             }
@@ -152,6 +155,9 @@ fun LoginScreenContent(
         state.errorMessage != null -> InfoAlertDialog(
             text = state.errorMessage,
             type = AlertType.ERROR,
+            modifier = Modifier.fillMaxWidth().testTag(
+                AlertType.ERROR.name
+            ),
             onConfirm = onResolveError
         )
 
@@ -161,6 +167,9 @@ fun LoginScreenContent(
                 state.userResult.userName
             ),
             type = AlertType.INFO,
+            modifier = Modifier.fillMaxWidth().testTag(
+                AlertType.INFO.name
+            ),
             onConfirm = onResolveError
         )
     }

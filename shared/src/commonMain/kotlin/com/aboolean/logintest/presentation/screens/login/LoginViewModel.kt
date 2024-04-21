@@ -24,10 +24,10 @@ class LoginViewModel(
 ) : ViewModel() {
 
     // region states
-    var email by mutableStateOf("tester@gmail.com")
+    var email by mutableStateOf("")
         private set
 
-    var password by mutableStateOf("bauabapTest")
+    var password by mutableStateOf("")
         private set
 
     var loginActionEnabled by mutableStateOf(false)

@@ -8,7 +8,7 @@ import kotlin.test.assertNotNull
 class AuthDataToDomainTest {
 
     @Test
-    fun `toDomain converts AuthResponse to UserEntity correctly`() {
+    fun toDomain_converts_AuthResponse_to_UserEntity_correctly() {
         // given
         val authResponse = AuthResponse(
             isAuthenticated = true,

@@ -1,10 +1,10 @@
 package com.aboolean.logintest.domain.usecase
 
 import app.cash.turbine.test
-import com.aboolean.logintest.MockData.VALID_ACCESS_TOKEN
-import com.aboolean.logintest.MockData.VALID_EMAIL
-import com.aboolean.logintest.MockData.VALID_PASSWORD
-import com.aboolean.logintest.MockData.VALID_USER_NAME
+import com.aboolean.logintest.SharedMockData.VALID_ACCESS_TOKEN
+import com.aboolean.logintest.SharedMockData.VALID_EMAIL
+import com.aboolean.logintest.SharedMockData.VALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.VALID_USER_NAME
 import com.aboolean.logintest.data.exception.InvalidCredentialException
 import com.aboolean.logintest.domain.entities.UserEntity
 import com.aboolean.logintest.domain.repository.AuthRepository
@@ -25,7 +25,6 @@ import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
-
 
 class DoLoginUseCaseTest {
 

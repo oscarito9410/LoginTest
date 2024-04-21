@@ -1,10 +1,10 @@
 package com.aboolean.logintest.data.repository
 
 import app.cash.turbine.test
-import com.aboolean.logintest.MockData.VALID_ACCESS_TOKEN
-import com.aboolean.logintest.MockData.VALID_EMAIL
-import com.aboolean.logintest.MockData.VALID_PASSWORD
-import com.aboolean.logintest.MockData.VALID_USER_NAME
+import com.aboolean.logintest.SharedMockData.VALID_ACCESS_TOKEN
+import com.aboolean.logintest.SharedMockData.VALID_EMAIL
+import com.aboolean.logintest.SharedMockData.VALID_PASSWORD
+import com.aboolean.logintest.SharedMockData.VALID_USER_NAME
 import com.aboolean.logintest.data.datasource.AuthDataSource
 import com.aboolean.logintest.data.exception.InvalidCredentialException
 import com.aboolean.logintest.data.mapper.toDomain

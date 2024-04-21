@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.aboolean.logintest.data.exception.InvalidCredentialException
+import com.aboolean.logintest.domain.entities.UserEntity
 import com.aboolean.logintest.domain.usecase.DoLoginUseCase
 import com.aboolean.logintest.foundation.OperationResult
 import com.aboolean.logintest.foundation.ViewModel
@@ -23,10 +24,10 @@ class LoginViewModel(
 ) : ViewModel() {
 
     // region states
-    var email by mutableStateOf("")
+    var email by mutableStateOf("tester@gmail.com")
         private set
 
-    var password by mutableStateOf("")
+    var password by mutableStateOf("bauabapTest")
         private set
 
     var loginActionEnabled by mutableStateOf(false)
@@ -56,13 +57,11 @@ class LoginViewModel(
         doLoginUseCase(email, password).collect {
             when (it) {
                 is OperationResult.Success -> {
-                    val userResult = it.data
                     updateState(
                         isLoading = false,
-                        isUserAuthenticated = userResult.isAuthenticated
+                        userResult = it.data
                     )
                 }
-
                 is OperationResult.Error -> {
                     updateState(
                         isLoading = false,
@@ -106,14 +105,14 @@ class LoginViewModel(
         errorMessage: String? = null,
         isInvalidEmail: Boolean = false,
         isInvalidPassword: Boolean = false,
-        isUserAuthenticated: Boolean = false,
+        userResult: UserEntity? = null,
     ) {
         state = state.copy(
             isLoading = isLoading,
             isInvalidEmail = isInvalidEmail,
             isInvalidPassword = isInvalidPassword,
             errorMessage = errorMessage,
-            isUserAuthenticated = isUserAuthenticated
+            userResult = userResult
         )
     }
 }

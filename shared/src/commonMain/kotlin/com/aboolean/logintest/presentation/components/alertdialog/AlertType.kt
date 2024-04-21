@@ -5,5 +5,6 @@ package com.aboolean.logintest.presentation.components.alertdialog
  */
 enum class AlertType {
     WARNING,
-    ERROR
+    ERROR,
+    INFO
 }

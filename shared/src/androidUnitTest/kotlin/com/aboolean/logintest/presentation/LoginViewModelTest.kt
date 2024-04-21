@@ -161,7 +161,8 @@ class LoginViewModelTest {
             // then
             viewModel.apply {
                 advanceUntilIdle()
-                assertTrue(state.isUserAuthenticated)
+                assertNotNull(state.userResult)
+                assertEquals(userEntity, state.userResult)
             }
         }
 

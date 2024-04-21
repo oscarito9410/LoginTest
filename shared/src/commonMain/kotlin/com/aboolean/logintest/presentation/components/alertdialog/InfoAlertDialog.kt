@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -47,10 +48,10 @@ fun InfoAlertDialog(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Icon(
-                    imageVector = if (type == AlertType.ERROR) {
-                        Icons.Default.Error
-                    } else {
-                        Icons.Default.Warning
+                    imageVector = when (type) {
+                        AlertType.ERROR -> Icons.Default.Error
+                        AlertType.INFO -> Icons.Default.Info
+                        else -> Icons.Default.Warning
                     },
                     contentDescription = type.name.lowercase(),
                     tint = if (type == AlertType.ERROR) {

@@ -13,7 +13,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -30,6 +29,7 @@ import com.aboolean.logintest.presentation.components.FullScreenLoader
 import com.aboolean.logintest.presentation.components.PasswordTextField
 import com.aboolean.logintest.presentation.components.alertdialog.AlertType
 import com.aboolean.logintest.presentation.components.alertdialog.InfoAlertDialog
+import com.aboolean.logintest.presentation.theme.AppTheme
 import com.aboolean.logintest.presentation.theme.Dimens.TextFieldHorizontalPadding
 import com.aboolean.logintest.presentation.theme.Dimens.TextFieldPadding
 import logintest.shared.generated.resources.Res
@@ -40,6 +40,7 @@ import logintest.shared.generated.resources.hint_password
 import logintest.shared.generated.resources.ic_login_welcome
 import logintest.shared.generated.resources.text_login
 import logintest.shared.generated.resources.text_welcome
+import logintest.shared.generated.resources.message_welcome_user
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -47,16 +48,18 @@ import org.koin.compose.koinInject
 
 @Composable
 fun LoginScreen(viewModel: LoginViewModel = koinInject()) = viewModel.run {
-    LoginScreenContent(
-        state,
-        email = email,
-        password = password,
-        isLoginActionEnabled = loginActionEnabled,
-        emailChanged = ::updateEmail,
-        passwordChanged = ::updatePassword,
-        onLoginPressed = ::onLoginPressed,
-        onResolveError = ::resetLoginState
-    )
+    AppTheme {
+        LoginScreenContent(
+            state,
+            email = email,
+            password = password,
+            isLoginActionEnabled = loginActionEnabled,
+            emailChanged = ::updateEmail,
+            passwordChanged = ::updatePassword,
+            onLoginPressed = ::onLoginPressed,
+            onResolveError = ::resetLoginState
+        )
+    }
 }
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalResourceApi::class)
@@ -146,6 +149,14 @@ fun LoginScreenContent(
         state.errorMessage != null -> InfoAlertDialog(
             text = state.errorMessage,
             type = AlertType.ERROR,
+            onConfirm = onResolveError
+        )
+        state.userResult != null -> InfoAlertDialog(
+            text = stringResource(
+                Res.string.message_welcome_user,
+                state.userResult.userName
+            ),
+            type = AlertType.INFO,
             onConfirm = onResolveError
         )
     }

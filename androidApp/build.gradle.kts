@@ -17,7 +17,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
     packaging {
         resources {
@@ -52,12 +52,6 @@ dependencies {
 
     // Leak Canary - Memory leaks
     debugImplementation(libs.leakCanary)
-
-    // Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.performance)
 
     testImplementation(libs.jUnitKtx)
     testImplementation(libs.kotlinX.coroutines.test)

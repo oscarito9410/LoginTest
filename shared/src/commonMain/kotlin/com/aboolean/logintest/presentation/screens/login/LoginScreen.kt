@@ -23,24 +23,27 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.aboolean.logintest.presentation.components.CustomTextField
 import com.aboolean.logintest.presentation.components.FullScreenLoader
 import com.aboolean.logintest.presentation.components.PasswordTextField
 import com.aboolean.logintest.presentation.components.alertdialog.AlertType
 import com.aboolean.logintest.presentation.components.alertdialog.InfoAlertDialog
 import com.aboolean.logintest.presentation.theme.AppTheme
+import com.aboolean.logintest.presentation.theme.Dimens.ImageLoginSize
+import com.aboolean.logintest.presentation.theme.Dimens.LargeSpace
+import com.aboolean.logintest.presentation.theme.Dimens.SmallSpace
 import com.aboolean.logintest.presentation.theme.Dimens.TextFieldHorizontalPadding
 import com.aboolean.logintest.presentation.theme.Dimens.TextFieldPadding
+import com.aboolean.logintest.presentation.theme.TextSize
 import logintest.shared.generated.resources.Res
 import logintest.shared.generated.resources.error_invalid_email_account
 import logintest.shared.generated.resources.error_invalid_password
 import logintest.shared.generated.resources.hint_email
 import logintest.shared.generated.resources.hint_password
 import logintest.shared.generated.resources.ic_login_welcome
+import logintest.shared.generated.resources.message_welcome_user
 import logintest.shared.generated.resources.text_login
 import logintest.shared.generated.resources.text_welcome
-import logintest.shared.generated.resources.message_welcome_user
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -82,18 +85,18 @@ fun LoginScreenContent(
             contentDescription = null,
             contentScale = ContentScale.Fit,
             modifier = Modifier.fillMaxWidth()
-                .size(200.dp)
+                .size(ImageLoginSize)
         )
         Column(
-            modifier = Modifier.padding(horizontal = 16.dp),
+            modifier = Modifier.padding(horizontal = LargeSpace),
             verticalArrangement = Arrangement.Center
         ) {
             Text(
                 text = stringResource(Res.string.text_welcome),
-                fontSize = 28.sp,
+                fontSize = TextSize.Large,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth().padding(vertical = 32.dp)
+                modifier = Modifier.fillMaxWidth().padding(vertical = LargeSpace)
             )
 
             CustomTextField(
@@ -131,7 +134,7 @@ fun LoginScreenContent(
                 errorMessage = stringResource(Res.string.error_invalid_password)
             )
 
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(SmallSpace))
 
             Button(
                 onClick = onLoginPressed,
@@ -151,6 +154,7 @@ fun LoginScreenContent(
             type = AlertType.ERROR,
             onConfirm = onResolveError
         )
+
         state.userResult != null -> InfoAlertDialog(
             text = stringResource(
                 Res.string.message_welcome_user,

@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.aboolean.logintest.presentation.theme.Dimens.AlphaLoadingIndicator
 import com.aboolean.logintest.presentation.theme.Dimens.LoadingIndicatorSize
 
 @Composable
@@ -20,7 +19,7 @@ fun FullScreenLoader() = Box(
         .fillMaxSize()
         .background(
             Color.Black.copy(
-                alpha = AlphaLoadingIndicator
+                alpha = 0.5f
             )
         ),
     contentAlignment = Alignment.Center

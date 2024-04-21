@@ -18,6 +18,8 @@ kotlin {
 
     androidTarget()
 
+    task("testClasses")
+
     val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
         when {
             System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64

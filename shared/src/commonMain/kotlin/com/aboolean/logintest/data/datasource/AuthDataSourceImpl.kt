@@ -32,7 +32,7 @@ class AuthDataSourceImpl : AuthDataSource {
         // fake valid credentials
         const val VALID_USER_EMAIL = "tester@gmail.com"
         const val VALID_PASSWORD = "bauabapTest"
-        const val VALID_USER_NAME = "userName"
+        const val VALID_USER_NAME = "Oscar"
         const val VALID_ACCESS_TOKEN = "199348jsh$"
     }
 }

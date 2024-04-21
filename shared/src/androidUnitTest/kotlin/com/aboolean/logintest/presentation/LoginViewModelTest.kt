@@ -1,4 +1,4 @@
-package com.aboolean.logintest
+package com.aboolean.logintest.presentation
 
 import com.aboolean.logintest.MockData.INVALID_CREDENTIALS_ERROR
 import com.aboolean.logintest.MockData.INVALID_EMAIL
@@ -213,7 +213,6 @@ class LoginViewModelTest {
             coEvery { useCase.invoke(any(), any()) } coAnswers {
                 flowResponse
             }
-
 
             coEvery {
                 resourceManager.getString(Res.string.error_unhandled)

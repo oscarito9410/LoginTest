@@ -31,7 +31,6 @@ import com.aboolean.logintest.presentation.theme.Dimens.TextFieldPadding
 import logintest.shared.generated.resources.Res
 import logintest.shared.generated.resources.error_invalid_email_account
 import logintest.shared.generated.resources.error_invalid_password
-import logintest.shared.generated.resources.error_service_auth
 import logintest.shared.generated.resources.hint_email
 import logintest.shared.generated.resources.hint_password
 import org.jetbrains.compose.resources.ExperimentalResourceApi

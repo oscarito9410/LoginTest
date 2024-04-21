@@ -1,22 +1,20 @@
-package com.aboolean.logintest.data.repository
+package com.aboolean.logintest.domain.usecase
 
 import app.cash.turbine.test
 import com.aboolean.logintest.MockData.VALID_ACCESS_TOKEN
 import com.aboolean.logintest.MockData.VALID_EMAIL
 import com.aboolean.logintest.MockData.VALID_PASSWORD
 import com.aboolean.logintest.MockData.VALID_USER_NAME
-import com.aboolean.logintest.data.datasource.AuthDataSource
 import com.aboolean.logintest.data.exception.InvalidCredentialException
-import com.aboolean.logintest.data.mapper.toDomain
-import com.aboolean.logintest.data.model.AuthResponse
+import com.aboolean.logintest.domain.entities.UserEntity
 import com.aboolean.logintest.domain.repository.AuthRepository
 import com.aboolean.logintest.foundation.OperationResult
-import io.mockk.MockKAnnotations
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.unmockkAll
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.resetMain
@@ -28,27 +26,24 @@ import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@OptIn(
-    ExperimentalCoroutinesApi::class
-)
-class AuthRepositoryTest {
 
-    private val authDataSource: AuthDataSource = mockk(relaxed = true)
+class DoLoginUseCaseTest {
 
-    // suit
-    private lateinit var repository: AuthRepository
+    // mock
+    private val authRepository: AuthRepository = mockk()
 
     // dispatchers
     private val dispatcher = StandardTestDispatcher()
     private val scope = TestScope(dispatcher)
 
+    // suit
+    private lateinit var doLoginUseCase: DoLoginUseCase
+
     @Before
     fun setUp() {
         Dispatchers.setMain(dispatcher)
-        MockKAnnotations.init(this)
-        repository = AuthRepositoryImpl(
-            authDataSource,
-            dispatcher
+        doLoginUseCase = DoLoginUseCase(
+            authRepository
         )
     }
 
@@ -59,45 +54,46 @@ class AuthRepositoryTest {
     }
 
     @Test
-    fun `doLogin when dataSource returns OperationResult_Success`() = scope.runTest {
+    fun `invoke when repository returns OperationResult_Success`() = scope.runTest {
         // given
-        val authResponse = AuthResponse(
+        val userEntity = UserEntity(
             isAuthenticated = true,
             userName = VALID_USER_NAME,
             email = VALID_EMAIL,
             accessToken = VALID_ACCESS_TOKEN
         )
-        coEvery { authDataSource.login(any()) } returns OperationResult.Success(
-            authResponse
+
+        coEvery { authRepository.doLogin(VALID_EMAIL, VALID_PASSWORD) } returns flowOf(
+            OperationResult.Success(userEntity)
         )
+
         // when
-        val flow = repository.doLogin(
-            VALID_EMAIL,
-            VALID_PASSWORD
-        )
+        val flow = doLoginUseCase.invoke(VALID_EMAIL, VALID_PASSWORD)
+
         // then
+        coVerify { authRepository.doLogin(VALID_EMAIL, VALID_PASSWORD) }
         flow.test {
             val result = awaitItem()
             assertTrue(result is OperationResult.Success)
-            assertEquals(authResponse.toDomain(), result.data)
+            assertEquals(userEntity, result.data)
             awaitComplete()
         }
     }
 
     @Test
-    fun `doLogin when dataSource returns OperationResult_Error`() = scope.runTest {
+    fun `invoke when repository returns OperationResult_Error`() = scope.runTest {
         // given
         val exception = InvalidCredentialException()
 
-        coEvery { authDataSource.login(any()) } returns OperationResult.Error(
-            exception
+        coEvery { authRepository.doLogin(VALID_EMAIL, VALID_PASSWORD) } returns flowOf(
+            OperationResult.Error(exception)
         )
+
         // when
-        val flow = repository.doLogin(
-            VALID_EMAIL,
-            VALID_PASSWORD
-        )
+        val flow = doLoginUseCase.invoke(VALID_EMAIL, VALID_PASSWORD)
+
         // then
+        coVerify { authRepository.doLogin(VALID_EMAIL, VALID_PASSWORD) }
         flow.test {
             val result = awaitItem()
             assertTrue(result is OperationResult.Error)

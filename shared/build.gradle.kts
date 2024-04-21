@@ -9,7 +9,6 @@ plugins {
     alias(libs.plugins.kotlinX.serialization.plugin)
     alias(libs.plugins.buildKonfig)
     alias(libs.plugins.compose)
-    alias(libs.plugins.sqlDelight)
     alias(libs.plugins.ksp)
 }
 
@@ -73,7 +72,6 @@ kotlin {
             api(libs.preCompose.viewmodel)
 
             implementation(compose.components.resources)
-            implementation(libs.sqlDelight.coroutine)
             // implementation(libs.material.windowSizeClass)
         }
 
@@ -85,7 +83,6 @@ kotlin {
 
         sourceSets["androidMain"].dependencies {
             implementation(libs.ktor.android)
-            implementation(libs.sqlDelight.android)
         }
 
         sourceSets["androidUnitTest"].dependencies {
@@ -97,7 +94,6 @@ kotlin {
 
         sourceSets["iosMain"].dependencies {
             implementation(libs.ktor.darwin)
-            implementation(libs.sqlDelight.native)
         }
 
         sourceSets["iosTest"].dependencies {}
@@ -130,14 +126,5 @@ buildkonfig {
             "API_KEY",
             gradleLocalProperties(rootDir).getProperty("api_key") ?: ""
         )
-    }
-}
-
-sqldelight {
-    databases {
-        create("AppDatabase") {
-            packageName.set("com.aboolean.shared.data.cache.sqldelight")
-            srcDirs.setFrom("src/commonMain/kotlin")
-        }
     }
 }

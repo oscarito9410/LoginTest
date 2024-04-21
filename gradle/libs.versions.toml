@@ -4,11 +4,6 @@ gradle = "8.1.0"
 ktLint = "11.6.0"
 detekt = "1.19.0"
 gradleVersionUpdate = "0.50.0"
-googleServices = "4.4.0"
-firebaseAppDistribution = "4.0.1"
-firebaseCrashlytics = "2.9.9"
-firebasePerformance = "1.4.2"
-nativeCocoapod = "1.9.0"
 
 # Kotlin Multiplatform Version
 kotlinxCoroutines = "1.7.3"
@@ -20,11 +15,9 @@ kotlinxSerializationJson = "1.6.2"
 kotlinxDateTime = "0.5.0"
 napier = "2.6.1"
 ktor = "2.3.7"
-sqlDelight = "2.0.1"
 multiplatformSettings = "1.1.1"
 kmpNativeCoroutines = "0.12.1-new-mm"
 buildKonfig = "0.13.3"
-kover = "0.6.1"
 preCompose = "1.5.10"
 imageLoader = "1.7.1"
 materialWindowSizeClass = "0.3.0"
@@ -32,8 +25,6 @@ materialWindowSizeClass = "0.3.0"
 #Android Versions
 androidxActivity = "1.8.2"
 
-#Desktop Versions
-kamel = "0.4.0"
 
 androidxCore = "1.12.0"
 material = "1.11.0"
@@ -54,7 +45,6 @@ turbine = "0.12.3"
 composeMultiplatform = "1.6.0"
 
 [plugins]
-mockMP = { id = "org.kodein.mock.mockmp", version.ref = "mockMP" }
 ktLint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktLint" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 gradleVersionUpdates = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionUpdate" }
@@ -69,12 +59,7 @@ kotlinX-serialization-plugin = { id = "org.jetbrains.kotlin.plugin.serialization
 kmp-NativeCoroutines-plugin = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmpNativeCoroutines" }
 buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildKonfig" }
 compose = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
-sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
-googleServices-plugin = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 ksp = { id ="com.google.devtools.ksp", version = "1.9.22-1.0.17" }
-firebase-crashlytics-plugin = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics" }
-firebase-appDistribution-plugin = { id = "com.google.firebase.appdistribution", version.ref = "firebaseAppDistribution" }
-firebase-performance-plugin = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerformance" }
 
 [libraries]
 #Kotlin Multiplatform Lib Dependencies
@@ -91,11 +76,6 @@ ktor-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 ktor-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-java = { module = "io.ktor:ktor-client-java", version.ref = "ktor" }
 ktor-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
-sqlDelight = { module = "app.cash.sqldelight:runtime", version.ref = "sqlDelight" }
-sqlDelight-coroutine = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
-sqlDelight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
-sqlDelight-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
-sqlDelight-JVM = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
 napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 kotlinX-dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTime" }
 multiplatformSettings-noArg = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "multiplatformSettings" }

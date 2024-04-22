@@ -88,5 +88,9 @@ Additionally, I've added a CI pipeline using GitHub Actions to run tests in the 
 
 [![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
 
-## App Show case
-[parrot-app-showcase.webm](https://github.com/oscarito9410/android_test_v2/assets/13366923/1b928109-694b-4c61-9763-349d1b5061fb)
+## App Show case on Android and iOS
+
+
+
+https://github.com/oscarito9410/LoginTest/assets/13366923/cb1198b5-d045-465e-a62b-facf20909e60
+

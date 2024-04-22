@@ -93,3 +93,9 @@ Additionally, I've added a CI pipeline using GitHub Actions to run tests in the 
 
 https://github.com/oscarito9410/LoginTest/assets/13366923/cb1198b5-d045-465e-a62b-facf20909e60
 
+## Libraries
+
+### Shared
+- [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform) - Compose Multiplatform is a declarative framework for sharing UIs across multiple platforms with Kotlin based on Jetpack compose.
+- [Koin](https://insert-koin.io/docs/setup/v3.1) - Kotin dependency injection library with multiplatform support.
+- [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) - Library support for Kotlin coroutines with multiplatform support.

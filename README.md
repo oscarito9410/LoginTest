@@ -51,7 +51,7 @@ This project is using the [experimental API](https://www.jetbrains.com/help/kotl
 To run UI tests in IOS use
 
 ```bash
-./gradlew :composeApp:iosSimulatorArm64Test
+./gradlew :shared:iosSimulatorArm64Test
 ```
 
 To run UI tests in Android use

@@ -35,11 +35,12 @@ These tests are platform-agnostic and compatible with any supported framework. F
 
 <img width="524" alt="Captura de Pantalla 2024-04-21 a la(s) 23 36 42" src="https://github.com/oscarito9410/LoginTest/assets/13366923/682fd71d-39b9-4e78-b1b8-aa08cf6cadf6">
 
-To run all the tests in the directory, run the following command
+To run all the unit tests in the projec, run the following command
 
 ```bash
   ./gradlew shared:allTests
 ```
+This will run *androidUnitTest* and *commonTest* 
 
 <h3>UI compose tests into commonTest</h3>
 

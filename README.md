@@ -31,7 +31,7 @@ This directory contains unit tests for the **ViewModel**, **repository**, **data
 
 <h3>commonTest</h3>
 
-these tests are platform-agnostic and compatible with any supported framework. For this code challenge, I have decided to maintain tests for **extensions**, **mappers**, and **compose components** in this directory, as required by the framework for Compose tests.
+These tests are platform-agnostic and compatible with any supported framework. For this code challenge, I have decided to maintain tests for **extensions**, **mappers**, and **compose components** in this directory, as required by the framework for Compose tests.
 
 <img width="524" alt="Captura de Pantalla 2024-04-21 a la(s) 23 36 42" src="https://github.com/oscarito9410/LoginTest/assets/13366923/682fd71d-39b9-4e78-b1b8-aa08cf6cadf6">
 

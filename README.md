@@ -71,7 +71,6 @@ https://github.com/oscarito9410/LoginTest/assets/13366923/8518e03e-c34b-4217-87a
 
 
 <h3>Test result report for unit tests</h3>
-
 <img width="1436" alt="Captura de Pantalla 2024-04-21 a la(s) 23 42 53" src="https://github.com/oscarito9410/LoginTest/assets/13366923/9c5a3559-4c85-4a7b-b6a4-7ec516765071">
 
 
@@ -89,8 +88,8 @@ Additionally, I've added a CI pipeline using GitHub Actions to run tests in the 
 [![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
 
 ## App Show case on Android and iOS
-
-
+> [!IMPORTANT]
+> Use this credentials for testing purposes: email: tester@gmail.com and password: pass1234$
 
 https://github.com/oscarito9410/LoginTest/assets/13366923/cb1198b5-d045-465e-a62b-facf20909e60
 

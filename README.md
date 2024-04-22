@@ -87,7 +87,7 @@ Additionally, I've added a CI pipeline using GitHub Actions to run tests in the 
 
 [![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
 
-## App Show case on Android and iOS
+## App Showcase on Android and iOS
 > [!IMPORTANT]
 > Use this credentials for testing purposes: email: tester@gmail.com and password: pass1234$
 

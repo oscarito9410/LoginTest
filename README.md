@@ -27,7 +27,7 @@ Due to KMP doesn't have offical support for any Mock framework. I decided to mov
 
 <img width="598" alt="Captura de Pantalla 2024-04-21 a la(s) 23 19 01" src="https://github.com/oscarito9410/LoginTest/assets/13366923/b88b6766-38d5-43c8-af9f-05eaad16030e">
 
-This directory contains unit tests for the **ViewModel**, **repository**, **datasource**, and **useCase** classes. These tests are focused on testing the individual components and their behavior in isolation.
+This directory contains unit tests for the **viewModel**, **repository**, **datasource**, and **useCase** classes. These tests are focused on testing the individual components and their behavior in isolation.
 
 <h3>commonTest</h3>
 

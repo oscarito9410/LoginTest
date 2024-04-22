@@ -27,7 +27,7 @@ Due to KMP doesn't have offical support for any Mock framework. I decided to mov
 
 <img width="598" alt="Captura de Pantalla 2024-04-21 a la(s) 23 19 01" src="https://github.com/oscarito9410/LoginTest/assets/13366923/b88b6766-38d5-43c8-af9f-05eaad16030e">
 
-This directory contains unit tests for the **ViewModel**, **repository**, **datasource**, and **useCase** classes. These tests are focused on testing the individual components and their behavior in isolation.
+This directory contains unit tests for the **viewModel**, **repository**, **datasource**, and **useCase** classes. These tests are focused on testing the individual components and their behavior in isolation.
 
 <h3>commonTest</h3>
 
@@ -35,13 +35,14 @@ These tests are platform-agnostic and compatible with any supported framework. F
 
 <img width="524" alt="Captura de Pantalla 2024-04-21 a la(s) 23 36 42" src="https://github.com/oscarito9410/LoginTest/assets/13366923/682fd71d-39b9-4e78-b1b8-aa08cf6cadf6">
 
-To run all the tests in the directory, run the following command
+To run all the unit tests in the projec, run the following command
 
 ```bash
   ./gradlew shared:allTests
 ```
+This will run *androidUnitTest* and *commonTest* 
 
-<h3>UI compose tests into commonTest</h3>
+<h3>UI compose tests in commonTest</h3>
 
 This project is using the [experimental API](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html#how-compose-multiplatform-testing-is-different-from-jetpack-compose) for UI testing however its important to take into consideration that:
 
@@ -51,7 +52,7 @@ This project is using the [experimental API](https://www.jetbrains.com/help/kotl
 To run UI tests in IOS use
 
 ```bash
-./gradlew :composeApp:iosSimulatorArm64Test
+./gradlew :shared:iosSimulatorArm64Test
 ```
 
 To run UI tests in Android use
@@ -83,9 +84,10 @@ This repository is scanned on every commit using SonarCloud. The quality gate st
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oscarito9410_android_test_v2&metric=code_smells&token=9dea55bf7e466e75d5e3a1b021725c6f1fb4e07f)](https://sonarcloud.io/summary/new_code?id=oscarito9410_android_test_v2)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=oscarito9410_android_test_v2&metric=security_rating&token=9dea55bf7e466e75d5e3a1b021725c6f1fb4e07f)](https://sonarcloud.io/summary/new_code?id=oscarito9410_android_test_v2)
 
+# CI
 Additionally, I've added a CI pipeline using GitHub Actions to run tests in the project on every commit
 
-[![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
+[![Build](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml/badge.svg)](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml)
 
 ## App Showcase on Android and iOS
 > [!IMPORTANT]

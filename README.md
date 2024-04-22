@@ -85,9 +85,8 @@ This repository is scanned on every commit using SonarCloud. The quality gate st
 
 # CI
 Additionally, I've added a CI pipeline using GitHub Actions to run tests in the project on every commit
-[![Build](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml/badge.svg)](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml)
 
-[![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
+[![Build](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml/badge.svg)](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml)
 
 ## App Showcase on Android and iOS
 > [!IMPORTANT]

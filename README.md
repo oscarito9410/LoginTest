@@ -83,7 +83,9 @@ This repository is scanned on every commit using SonarCloud. The quality gate st
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oscarito9410_android_test_v2&metric=code_smells&token=9dea55bf7e466e75d5e3a1b021725c6f1fb4e07f)](https://sonarcloud.io/summary/new_code?id=oscarito9410_android_test_v2)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=oscarito9410_android_test_v2&metric=security_rating&token=9dea55bf7e466e75d5e3a1b021725c6f1fb4e07f)](https://sonarcloud.io/summary/new_code?id=oscarito9410_android_test_v2)
 
+# CI
 Additionally, I've added a CI pipeline using GitHub Actions to run tests in the project on every commit
+[![Build](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml/badge.svg)](https://github.com/oscarito9410/LoginTest/actions/workflows/build.yml)
 
 [![Android CI Tests Review](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml/badge.svg)](https://github.com/oscarito9410/android_test_v2/actions/workflows/android.yml)
 

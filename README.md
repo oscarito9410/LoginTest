@@ -42,7 +42,7 @@ To run all the unit tests in the projec, run the following command
 ```
 This will run *androidUnitTest* and *commonTest* 
 
-<h3>UI compose tests into commonTest</h3>
+<h3>UI compose tests in commonTest</h3>
 
 This project is using the [experimental API](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html#how-compose-multiplatform-testing-is-different-from-jetpack-compose) for UI testing however its important to take into consideration that:
 

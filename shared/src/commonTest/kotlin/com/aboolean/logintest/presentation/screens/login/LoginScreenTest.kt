@@ -24,14 +24,16 @@ import com.aboolean.logintest.presentation.screens.login.TestTags.LOGIN_BUTTON
 import com.aboolean.logintest.presentation.screens.login.TestTags.PASSWORD_TEXT_FIELD
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
+import kotlin.test.Ignore
 import kotlin.test.Test
 
 /**
  * This test class will fail, if you use gutter icons in Android Studio
  * see https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html#write-and-run-common-tests
- * use ./gradlew shared:connectedAndroidTest to run these tests
+ * use ./gradlew shared:connectedAndroidTest and remove the ignore annotation
  */
 
+@Ignore
 @OptIn(ExperimentalTestApi::class)
 class LoginScreenTest {
 

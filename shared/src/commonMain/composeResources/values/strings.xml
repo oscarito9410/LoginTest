@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">My awesome app</string>
     <string name="text_welcome">¡Bienvenido!</string>
     <string name="text_login">Iniciar sesión</string>
     <string name="hint_email">Correo Electrónico</string>

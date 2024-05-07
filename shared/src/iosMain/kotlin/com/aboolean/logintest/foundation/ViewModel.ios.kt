@@ -9,7 +9,7 @@ import kotlinx.coroutines.cancel
 actual open class ViewModel {
 
     actual val viewModelScope: CoroutineScope
-        get() = CoroutineScope(Dispatchers.IO)
+        get() = CoroutineScope(Dispatchers.Main)
 
     protected actual open fun onCleared() {
         viewModelScope.cancel()

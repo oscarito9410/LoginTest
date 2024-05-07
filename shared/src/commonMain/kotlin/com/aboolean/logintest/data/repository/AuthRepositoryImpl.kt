@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 
 class AuthRepositoryImpl(
     private val authDataSource: AuthDataSource,
@@ -22,9 +23,11 @@ class AuthRepositoryImpl(
         password: String
     ): Flow<OperationResult<UserEntity>> = flow {
         val request = AuthRequest(email, password)
-        val result = authDataSource.login(request).mapToDomain {
+        val result = authDataSource.login(request)
+        emit(result)
+    }.map { dataResponse ->
+        dataResponse.mapToDomain {
             it.toDomain()
         }
-        emit(result)
     }.flowOn(dispatcher)
 }
